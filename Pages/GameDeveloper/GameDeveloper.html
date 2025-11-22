@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ZelPort</title>
+  <link rel="stylesheet" href="../GameDeveloper/Assets/Style/style.css">
+</head>
+<body>
+
+<canvas id="particulas-canvas"></canvas>
+
+<video src="Assets/Img/DemoReelKevinVallejo.mp4.mp4" type="video/mp4" id="video-fondo" autoplay muted loop playsinline></video>
+
+<main id="contenido">
+  <div class="menu-horizontal">
+    <a href="../../Portfolio.html"><div class="apartado">About Me</div></a>
+    <a href="../GameDeveloper/GameDeveloper.html"><div class="apartado">Game Developer</div></a>
+    <a href="../VideoEditor/VideoEditor.html"><div class="apartado">Video Editor</div></a>
+    <a href="../3DModeling/3DModeling.html"><div class="apartado">3D Modelling</div></a>
+  </div>
+</main>
+
+<div class="padre">
+  <!-- Proyecto 1 -->
+  <div class="proyecto">
+    <section class="sobre-mi">
+      <h2>Dreams</h2>
+      <p>
+        Juego hecho en Unity 2D, animaciones y tilesets hechos en Aseprite, música realizada por Lastxandre.
+        Mi rol fue desarrollar las mecánicas, las animaciones y sus importaciones a Unity.
+      </p>
+    </section>
+    <div class="video-contenedor">
+      <video src="Assets/Img/Dreams.mp4" controls style="margin-top: 35px;"></video>
+    </div>
+  </div>
+
+  <!-- Proyecto 2 -->
+  <div class="proyecto">
+    <section class="sobre-mi">
+      <h2>SpaceBall</h2>
+      <p>
+        Mi primer juego hecho en Unity 3D, en el que exploré las mecánicas básicas para su funcionamiento.
+        Aprendí a usar mecánicas de movimiento, canvas, instancias e implementación de animaciones.
+      </p>
+    </section>
+    <div class="video-contenedor">
+      <video src="Assets/Img/SpaceBall.mp4" controls></video>
+    </div>
+  </div>
+
+  <!--<div class="proyecto">
+    <section class="sobre-mi">
+      <h2>Juego Educativo</h2>
+      <p>
+        Juego Educativo hecho en Unity 2D, exploro mecánicas de Canvas para las interacciones y sistemas de puntuaciones con PlayerPrefs, cuenta 
+        con un Juego multirespuesta, otro de enlazar y uno de rellenar huecos. Listo para poner a prueba tu conocimiento de informática. 
+      </p>
+    </section>
+    <div class="video-contenedor">
+      <video src="Assets/Img/SpaceBall.mp4" controls></video>
+    </div>
+  </div>
+-->
+</div>
+
+<footer>
+<div class="logos-contenedor">
+  <a href="https://www.linkedin.com/in/kevin-vallejo-quiroz-a3863b2b6/"><div class="logo"><img src="Assets/Img/linkedin.webp"></div></a>
+  <a href="https://www.instagram.com/lvxr4y_kxv/?next=%2F"><div class="logo"><img src="Assets/Img/instagram.webp"></div></a>
+</div>
+
+<script src="../GameDeveloper/Assets/Scripts/particulas.js"></script>
+<script src="../GameDeveloper/Assets/Scripts/contenido.js"></script>
+<script src="../GameDeveloper/Assets/Scripts/intro.js"></script>
+</footer>
+</body>
+</html>

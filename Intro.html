@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Intro ZelPort</title>
+<link rel="stylesheet" href="Assets/Style/style.css">
+</head>
+<body>
+
+<canvas id="particulas-canvas"></canvas>
+
+<div id="intro">
+   <div id="rombo-wrapper">
+     <div id="rombo"></div>
+   </div>
+</div>
+
+<div id="bienvenida">
+  <h1>Welcome to my Portfolio</h1>
+</div>
+
+<script src="Assets/Scripts/particulas.js"></script>
+<script>
+window.addEventListener("load", () => {
+    const intro = document.getElementById("intro");
+    const bienvenida = document.getElementById("bienvenida");
+
+    // Animación de intro
+    setTimeout(() => {
+        intro.style.transition = "opacity 4s";
+        intro.style.opacity = 0;
+
+        setTimeout(() => {
+            bienvenida.style.transition = "opacity 1.5s";
+            bienvenida.style.opacity = 0;
+
+            setTimeout(() => {
+                // Redirigir automáticamente a la página principal
+                window.location.href = "./Portfolio.html";
+            }, 1500);
+        }, 4000);
+    }, 2200);
+});
+</script>
+
+</body>
+
+</html>
