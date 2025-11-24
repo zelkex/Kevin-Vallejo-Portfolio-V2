@@ -30,7 +30,7 @@ body {
   align-items: center;
   gap: 2rem;
   width: 100%;
-  padding: 3rem 1rem 1rem; /* Ajuste: más espacio arriba */
+  padding: 1rem 1rem 1rem; /* Ajuste: más espacio arriba */
   opacity: 1;
   transition: opacity 0.8s ease;
   z-index: 10;
@@ -46,7 +46,7 @@ body {
   height: 15vh;
   object-fit: cover;
   z-index: 0;
-  opacity: 0;
+  opacity: 1;
   transition: opacity 1.5s ease;
   filter: brightness(0.5);
 }
@@ -80,7 +80,7 @@ body {
   width: 2px;
   height: 80%;
   background-color: #D11A2A;
-  box-shadow: 0 0 8px #D11A2A;
+  box-shadow: 0 0 10px 2px#D11A2A;
 }
 
 .apartado:hover {
