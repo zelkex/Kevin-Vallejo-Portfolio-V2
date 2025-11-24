@@ -104,26 +104,32 @@ a:active {
   text-decoration: none;
 }
 
-/* Video fondo: ahora sube con scroll */
+.video-cont {
+  position: relative;
+  width: 100%;
+  height: 15vh;
+  overflow: hidden;
+}
+
+/* Iframe normal */
 #video-fondo {
-  position: relative;       /* Se mueve con el flujo */
+  position: absolute;
   top: 0;
   left: 0;
   width: 100%;
-  height: 15vh;
-  object-fit: cover;
+  height: 100%;
+  border: none;
   z-index: 0;
-  
-  transition: opacity 1.5s ease;
-  filter: brightness(0.5);
 }
 
-#video-fondo::after {
+/* El degradado ahora funciona */
+.video-cont::after {
   content: "";
   position: absolute;
   inset: 0;
   background: linear-gradient(to bottom, transparent, #030303);
   z-index: 1;
+  pointer-events: none;
 }
 
 /* Apartados del menú */
