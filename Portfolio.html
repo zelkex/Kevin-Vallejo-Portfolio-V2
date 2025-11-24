@@ -5,18 +5,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>ZelPort</title>
     <link rel="stylesheet" href="Assets/Style/style.css">
-       <script>
-  // Primera visita: mostrar intro
-  if (!sessionStorage.getItem("introShown")) {
-    document.documentElement.classList.add("mostrar-intro");
-    sessionStorage.setItem("introShown", "true");
-  }
-</script>
 
-    </script>
+
 </head>
 <body>
-
+<canvas id="particulas-canvas"></canvas>
 
 
 <video src="Assets/Img/DemoReelKevinVallejo.mp4.mp4" type="video/mp4" id="video-fondo" autoplay muted loop playsinline>
@@ -27,7 +20,7 @@
 <main id="contenido" style="opacity: 1;">
  
   <div id="menu" class="menu-horizontal">
-    <a href="../Portfolio/Portfolio.html"><div class="apartado">About Me</div></a>
+    <a href="Portfolio.html"><div class="apartado">About Me</div></a>
     <a href="Pages/GameDeveloper/GameDeveloper.html"><div class="apartado">Game Developer</div></a>
     <a href="Pages/VideoEditor/VideoEditor.html"><div class="apartado">Video Editor</div></a>
     <a href="Pages/3DModeling/3DModeling.html"><div class="apartado">3D Modelling</div></a>
@@ -63,9 +56,9 @@ Me considero una persona responsable y creativa, con capacidad de adaptación y 
 
 
 
-    <script src="Portfolio/Assets/Scripts/intro.js"></script>
-    <script src="Portfolio/Assets/Scripts/particulas.js"></script>
-     <script src="Portfolio/Assets/Scripts/contenido.js"></script>
+    <script src="Assets/Scripts/intro.js"></script>
+    <script src="Assets/Scripts/particulas.js"></script>
+     <script src="Assets/Scripts/contenido.js"></script>
 </footer>
 </body>
 </html>
