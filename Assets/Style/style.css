@@ -170,7 +170,18 @@ a:active {
 
 /* Contenedor padre: bloques centrados y más abajo */
 .padre {
-  display: flex;
+  display:flex;
+  flex-wrap: wrap;          /* Permite bajar elementos si no caben */
+  justify-content: center;   /* Centra horizontalmente */
+  align-items: flex-start;   /* Alinea bloques arriba */
+  gap: 3rem;
+  padding: 6rem 2rem 2rem;   /* Espacio superior */
+  position: relative;
+  
+}
+
+.padre2 {
+  display:flex;
   flex-wrap: wrap;          /* Permite bajar elementos si no caben */
   justify-content: center;   /* Centra horizontalmente */
   align-items: flex-start;   /* Alinea bloques arriba */
@@ -182,7 +193,7 @@ a:active {
 /* Bloque "sobre-mi" */
 .sobre-mi {
   flex: 1 1 400px;
-  max-width: 500px;
+  max-width: 650px;
   padding: 2rem;
   text-align: center;
 
@@ -212,6 +223,7 @@ a:active {
 .video-contenedor {
   flex: 1 1 400px;
   max-width: 700px;
+  max-height: 400px;
   padding: 2rem;
   border-radius: 20px;
   overflow: hidden;
@@ -226,6 +238,7 @@ a:active {
 
 .video-contenedor video {
   width: 100%;
+  
   height: auto;
   display: block;
   border-radius: 15px;
