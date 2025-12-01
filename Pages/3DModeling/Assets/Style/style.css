@@ -115,6 +115,16 @@ a:active {
   position: relative;
 }
 
+.padre2 {
+  display: flex;
+  flex-wrap: wrap;          /* Permite bajar elementos si no caben */
+  justify-content: center;   /* Centra horizontalmente */
+  align-items: flex-start;   /* Alinea bloques arriba */
+  gap: 3rem;
+  padding: 6rem 2rem 2rem;   /* Espacio superior */
+  position: relative;
+}
+
 /* Bloque "sobre-mi" */
 .sobre-mi {
   flex: 1 1 400px;
@@ -164,6 +174,14 @@ a:active {
 }
 
 .video-contenedor video {
+  width: 100%;
+  height: auto;
+  display: block;
+  border-radius: 15px;
+}
+
+
+.video-contenedor img {
   width: 100%;
   height: auto;
   display: block;
