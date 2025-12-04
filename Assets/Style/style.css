@@ -1,4 +1,53 @@
 /* Reset global */
+/* ===============================
+   INTRO ANIMADA COMPLETA + RESPONSIVE
+=============================== */
+
+/* Contenedor intro */
+#intro {
+  position: fixed;
+  inset: 0;
+  background: #7bff00;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 999;
+  overflow: hidden;
+}
+
+/* Rombo centrado */
+#rombo-wrapper {
+  animation: caer 1.2s ease-out forwards;
+  transform: translateY(-30vh);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+#rombo {
+  width: 12vmin;
+  height: 12vmin;
+  background: #8400ff;
+  transform: rotate(45deg);
+  box-shadow: 0 0 20px #030303;
+  animation: expandir 1s 1.2s ease-out forwards;
+}
+
+/* Texto de bienvenida */
+#bienvenida {
+  font-size: clamp(1.2rem, 2.8vw, 2.8rem);
+  position: absolute;
+  text-align: center;
+  color: white;
+  opacity: 0;
+  z-index: 1000;
+  animation: aparecerTexto 1s 2.2s ease forwards;
+}
+
+/* Ocultar intro si ya fue vista */
+body.intro-vista #intro {
+  display: none !important;
+}
 * {
   margin: 0;
   padding: 0;
@@ -265,6 +314,55 @@ a:active {
   height: 50px;
   width: 50px;
 }
+
+/* Animaciones */
+@keyframes caer {
+  to {
+    transform: translateY(0);
+  }
+}
+
+@keyframes expandir {
+  to {
+    transform: rotate(45deg) scale(100);
+  }
+}
+
+@keyframes aparecerTexto {
+  to {
+    opacity: 1;
+  }
+}
+
+/* ===============================
+     RESPONSIVE INTRO
+=============================== */
+
+@media (max-width: 768px) {
+  #rombo {
+    width: 18vmin;
+    height: 18vmin;
+  }
+}
+
+@media (max-width: 600px) {
+  #rombo {
+    width: 22vmin;
+    height: 22vmin;
+  }
+}
+
+@media (max-width: 400px) {
+  #rombo {
+    width: 26vmin;
+    height: 26vmin;
+  }
+
+  #bienvenida {
+    font-size: 1.2rem;
+  }
+}
+
 
 /* ===============================
      RESPONSIVE GLOBAL COMPLETO
