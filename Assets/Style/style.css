@@ -126,12 +126,7 @@ a:active {
 }
 
 
-.video-contenedor {
-  position: relative;
-  width: 60vh;
-  height: 50vh;
-  overflow: hidden;
-}
+
 
 
 .apartado {
@@ -223,13 +218,13 @@ a:active {
 .video-contenedor {
   flex: 1 1 400px;
   max-width: 700px;
-  max-height: 400px;
+  opacity: 1;
+  margin-top: 45px;
   padding: 2rem;
   border-radius: 20px;
   overflow: hidden;
   box-shadow: 0 0 15px rgba(132, 0, 255, 0.4);
   background: rgba(0, 0, 0, 0.2);
-  
   position: relative;  /* Quitamos sticky */
   text-align: center;
   margin: 0 auto;
@@ -238,11 +233,19 @@ a:active {
 
 .video-contenedor video {
   width: 100%;
-  
   height: auto;
   display: block;
   border-radius: 15px;
 }
+.video-contenedor iframe {
+  width: 100%;
+  aspect-ratio: 16/9;
+  height: auto;
+  display: block;
+}
+
+
+
 
 /* Logos */
 .logos-contenedor {
@@ -263,11 +266,52 @@ a:active {
   width: 50px;
 }
 
-/* Responsive */
-@media (max-width: 768px) {
+/* ===============================
+     RESPONSIVE GLOBAL COMPLETO
+     (IGUAL QUE EL DE TUS OTRAS PÁGINAS)
+=============================== */
+
+/* Tablets grandes */
+@media (max-width: 1024px) {
+
+  .padre,
+  .padre2 {
+    padding-top: 4rem;
+    gap: 2.5rem;
+  }
+
+  .sobre-mi {
+    max-width: 600px;
+  }
+
   .video-contenedor {
-    position: relative;   /* Ya no se pega, se queda en flujo */
-    top: 0;               /* Reinicia top */
+    max-width: 90%;
+  }
+}
+
+/* Tablets y móviles grandes */
+@media (max-width: 768px) {
+
+  .menu-horizontal {
+    gap: 1.5rem;
+    padding: 1rem 0.5rem;
+  }
+
+  .apartado {
+    font-size: 1.3rem;
+  }
+
+  .video-contenedor {
+    width: 100%;
+    max-width: 100%;
+    padding: 1.5rem;
+  }
+
+  .video-contenedor iframe,
+  .video-contenedor video {
+    width: 100%;
+    height: auto;
+    aspect-ratio: 16/9;
   }
 
   .logos-contenedor {
@@ -281,9 +325,18 @@ a:active {
   }
 }
 
+/* Móviles estándar */
 @media (max-width: 600px) {
+
+  .padre,
+  .padre2 {
+    padding: 4rem 1rem 1rem;
+    gap: 2rem;
+  }
+
   .sobre-mi {
-    padding: 1.5rem;
+    max-width: 100%;
+    padding: 1.3rem;
   }
 
   .sobre-mi h2 {
@@ -298,6 +351,7 @@ a:active {
     padding: 1.2rem;
   }
 
+  .video-contenedor iframe,
   .video-contenedor video {
     border-radius: 10px;
   }
@@ -313,15 +367,18 @@ a:active {
   }
 }
 
-/* Animaciones */
-@keyframes caer {
-  to {
-    transform: translateY(0);
-  }
-}
+/* Móviles pequeños */
+@media (max-width: 400px) {
 
-@keyframes expandir {
-  to {
-    transform: rotate(45deg) scale(100);
+  .apartado {
+    font-size: 1.1rem;
+  }
+
+  .video-contenedor {
+    padding: 1rem;
+  }
+
+  .sobre-mi h2 {
+    font-size: 1.8rem;
   }
 }

@@ -21,8 +21,9 @@ body {
   pointer-events: none;
 }
 
-
-
+/* ===============================
+        MENÚ ORIGINAL
+=============================== */
 
 .menu-horizontal {
   display: flex;
@@ -30,18 +31,15 @@ body {
   align-items: center;
   gap: 2rem;
   width: 100%;
-  padding: 1rem 1rem 1rem; /* Ajuste: más espacio arriba */
+  padding: 1rem 1rem 1rem;
   opacity: 1;
   transition: opacity 0.8s ease;
   z-index: 10;
   position: relative;
 }
 
-/* Video fondo: ahora sube con scroll */
 #video-fondo {
-  position: relative;       /* Se mueve con el flujo */
-  top: 0;
-  left: 0;
+  position: relative;
   width: 100%;
   height: 15vh;
   object-fit: cover;
@@ -59,7 +57,6 @@ body {
   z-index: 1;
 }
 
-/* Apartados del menú */
 .apartado {
   color: white;
   cursor: pointer;
@@ -98,18 +95,20 @@ a:active {
   text-decoration: none;
 }
 
-/* Contenedor padre: bloques centrados y más abajo */
+/* ===============================
+     CONTENEDORES (MISMO ESTILO)
+=============================== */
+
 .padre {
   display: flex;
-  flex-wrap: wrap;          /* Permite bajar elementos si no caben */
-  justify-content: center;   /* Centra horizontalmente */
-  align-items: flex-start;   /* Alinea bloques arriba */
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: flex-start;
   gap: 3rem;
-  padding: 6rem 2rem 2rem;   /* Espacio superior */
+  padding: 6rem 2rem 2rem;
   position: relative;
 }
 
-/* Bloque "sobre-mi" */
 .sobre-mi {
   flex: 1 1 400px;
   max-width: 500px;
@@ -120,9 +119,7 @@ a:active {
   border-radius: 20px;
   backdrop-filter: blur(8px);
   box-shadow: 0 0 15px rgba(204, 98, 0, 1);
-  position: relative;  /* Quitamos sticky */
   margin: 0 auto;
-  transform: none !important;
 }
 
 .sobre-mi h2 {
@@ -137,24 +134,21 @@ a:active {
   line-height: 1.6;
   color: #FFB766;
 }
-
-/* Bloque "video-contenedor" */
+/* ===============================
+       CONTENEDOR DE VIDEO
+   =============================== */
 .video-contenedor {
-  flex: 1 1 400px;
+  width: 700px;
   max-width: 700px;
+  margin: 60px auto;
   padding: 2rem;
+  background: rgba(0, 0, 0, 0.25);
   border-radius: 20px;
+ box-shadow: 0 0 15px rgba(204, 98, 0, 1);
   overflow: hidden;
-  box-shadow: 0 0 15px rgba(204, 98, 0, 1);
-  background: rgba(0, 0, 0, 0.2);
-  opacity: 0;
-  position: relative;  /* Quitamos sticky */
-  text-align: center;
-  margin: 0 auto;
-  transform: none !important;
-  margin-top: 45px;
 }
 
+/* Video */
 .video-contenedor video {
   width: 100%;
   height: auto;
@@ -162,18 +156,29 @@ a:active {
   border-radius: 15px;
 }
 
-/* Logos */
+/* Iframe del mismo tamaño EXACTO */
+.video-contenedor iframe {
+  width: 100%;
+  height: 394px;
+  border-radius: 15px;
+  border: 0;
+  display: block;
+}
+
+
+/* ===============================
+          LOGOS
+=============================== */
+
 .logos-contenedor {
- 
   display: flex;
   justify-content: center;
   align-items: center;
   gap: 2rem;
-  position: relative;
   padding: 1rem;
-  transition: opacity 0.8s ease;
   margin-top: 60px;
   flex-wrap: wrap;
+  transition: opacity 0.8s ease;
 }
 
 .logo img {
@@ -181,11 +186,51 @@ a:active {
   width: 50px;
 }
 
-/* Responsive */
-@media (max-width: 768px) {
+/* ===============================
+     RESPONSIVE GLOBAL REAL
+=============================== */
+
+/* Tablets grandes y pantallas medianas */
+@media (max-width: 1024px) {
+
+  .padre {
+    padding-top: 4rem;
+    gap: 2.5rem;
+  }
+
+  .sobre-mi {
+    max-width: 600px;
+  }
+
   .video-contenedor {
-    position: relative;   /* Ya no se pega, se queda en flujo */
-    top: 0;               /* Reinicia top */
+    max-width: 90%;
+  }
+}
+
+/* Tablets y móviles grandes */
+@media (max-width: 768px) {
+
+  .menu-horizontal {
+    gap: 1.5rem;
+    padding: 1rem 0.5rem;
+  }
+
+  .apartado {
+    font-size: 1.3rem;
+  }
+
+  .video-contenedor {
+    width: 100%;
+    max-width: 100%;
+    padding: 1.5rem;
+  }
+
+  .video-contenedor iframe,
+  .video-contenedor video,
+  .video-contenedor img {
+    width: 100%;
+    height: auto;
+    aspect-ratio: 16/9;
   }
 
   .logos-contenedor {
@@ -199,9 +244,17 @@ a:active {
   }
 }
 
+/* Móviles estándar */
 @media (max-width: 600px) {
+
+  .padre {
+    padding: 4rem 1rem 1rem;
+    gap: 2rem;
+  }
+
   .sobre-mi {
-    padding: 1.5rem;
+    max-width: 100%;
+    padding: 1.3rem;
   }
 
   .sobre-mi h2 {
@@ -216,7 +269,9 @@ a:active {
     padding: 1.2rem;
   }
 
-  .video-contenedor video {
+  .video-contenedor iframe,
+  .video-contenedor video,
+  .video-contenedor img {
     border-radius: 10px;
   }
 
@@ -231,15 +286,18 @@ a:active {
   }
 }
 
-/* Animaciones */
-@keyframes caer {
-  to {
-    transform: translateY(0);
-  }
-}
+/* Móviles pequeños */
+@media (max-width: 400px) {
 
-@keyframes expandir {
-  to {
-    transform: rotate(45deg) scale(100);
+  .apartado {
+    font-size: 1.1rem;
+  }
+
+  .video-contenedor {
+    padding: 1rem;
+  }
+
+  .sobre-mi h2 {
+    font-size: 1.8rem;
   }
 }

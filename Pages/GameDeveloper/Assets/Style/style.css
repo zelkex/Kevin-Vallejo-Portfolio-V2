@@ -21,53 +21,28 @@ body {
   pointer-events: none;
 }
 
-
-
-/* Menu Horizontal: más abajo */
+/* ===============================
+          MENU HORIZONTAL
+   =============================== */
+/* Menu Horizontal */
 .menu-horizontal {
   display: flex;
   justify-content: center;
   align-items: center;
   gap: 2rem;
   width: 100%;
-  padding: 1rem 1rem 1rem; /* Ajuste: más espacio arriba */
-  opacity: 1;
-  transition: opacity 0.8s ease;
+  padding: 1rem;
   z-index: 10;
   position: relative;
 }
 
-/* Video fondo: ahora sube con scroll */
-#video-fondo {
-  position: relative;       /* Se mueve con el flujo */
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 15vh;
-  object-fit: cover;
-  z-index: 0;
-  opacity: 1;
-  transition: opacity 1.5s ease;
-  filter: brightness(0.5);
-}
-
-#video-fondo::after {
-  content: "";
-  position: absolute;
-  inset: 0;
-  background: linear-gradient(to bottom, transparent, #030303);
-  z-index: 1;
-}
-
-/* Apartados del menú */
+/* Apartados */
 .apartado {
   color: white;
   cursor: pointer;
   font-weight: bold;
   font-size: clamp(1rem, 1.5rem, 2rem);
   position: relative;
-  display: flex;
-  align-items: center;
   padding: 0 0.5rem;
 }
 
@@ -80,46 +55,60 @@ body {
   width: 2px;
   height: 80%;
   background-color: #D11A2A;
-  box-shadow: 0 0 10px 2px#D11A2A;
+  box-shadow: 0 0 10px 2px #D11A2A;
 }
 
 .apartado:hover {
-  text-shadow:
-    0 0 10px #1AD1C1,
-    0 0 15px #1AD1C1,
-    0 0 25px #1AD1C1;
+  text-shadow: 0 0 10px #1AD1C1, 0 0 15px #1AD1C1, 0 0 25px #1AD1C1;
   transition: text-shadow 0.3s ease;
 }
 
+a {
+  text-decoration: none;
+}
+
+/* Evitar subrayados de enlaces */
 a,
 a:visited,
 a:hover,
 a:active {
   text-decoration: none;
+  color: inherit;
 }
 
-/* Contenedor padre: bloques centrados y más abajo */
-.padre {
-  display: flex;
-  flex-wrap: wrap;          /* Permite bajar elementos si no caben */
-  justify-content: center;   /* Centra horizontalmente */
-  align-items: flex-start;   /* Alinea bloques arriba */
-  gap: 3rem;
-  padding: 6rem 2rem 2rem;   /* Espacio superior */
+/* Fondo de video superior */
+#video-fondo {
+  width: 100%;
+  height: 15vh;
+  object-fit: cover;
+  filter: brightness(0.5);
   position: relative;
 }
+
+#video-fondo::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to bottom, transparent, #030303);
+}
+
+/* ===============================
+        CONTENEDORES PRINCIPALES
+   =============================== */
+.padre,
 .padre2 {
   display: flex;
-  flex-wrap: wrap;          /* Permite bajar elementos si no caben */
-  justify-content: center;   /* Centra horizontalmente */
-  align-items: flex-start;   /* Alinea bloques arriba */
+  flex-wrap: wrap;
+  justify-content: center;
   gap: 3rem;
-  padding: 6rem 2rem 2rem;   /* Espacio superior */
-  position: relative;
+  padding: 6rem 2rem 2rem;
 }
-/* Bloque "sobre-mi" */
+
+/* ===============================
+             BLOQUE TEXTO
+   =============================== */
 .sobre-mi {
-  flex: 1 1 400px;
+  flex: 1 1 350px;
   max-width: 500px;
   padding: 2rem;
   text-align: center;
@@ -128,9 +117,7 @@ a:active {
   border-radius: 20px;
   backdrop-filter: blur(8px);
   box-shadow: 0 0 15px rgba(163, 20, 33, 1);
-  position: relative;  /* Quitamos sticky */
   margin: 0 auto;
-  transform: none !important;
 }
 
 .sobre-mi h2 {
@@ -146,22 +133,21 @@ a:active {
   color: #F28A92;
 }
 
-/* Bloque "video-contenedor" */
+/* ===============================
+       CONTENEDOR DE VIDEO
+   =============================== */
 .video-contenedor {
-  flex: 1 1 400px;
+  width: 700px;
   max-width: 700px;
+  margin: 60px auto;
   padding: 2rem;
+  background: rgba(0, 0, 0, 0.25);
   border-radius: 20px;
+  box-shadow: 0 0 18px rgba(163, 20, 33, 1);
   overflow: hidden;
-  box-shadow: 0 0 15pxrgba(163, 20, 33, 1);
-  background: rgba(0, 0, 0, 0.2);
-  opacity: 0;
-  position: relative;  /* Quitamos sticky */
-  text-align: center;
-  margin: 0 auto;
-  transform: none !important;
 }
 
+/* Video */
 .video-contenedor video {
   width: 100%;
   height: auto;
@@ -169,46 +155,91 @@ a:active {
   border-radius: 15px;
 }
 
-/* Logos */
+/* Iframe del mismo tamaño EXACTO */
+.video-contenedor iframe {
+  width: 100%;
+  height: 394px;
+  border-radius: 15px;
+  border: 0;
+  display: block;
+}
+
+/* ===============================
+                LOGOS
+   =============================== */
 .logos-contenedor {
-  
   display: flex;
   justify-content: center;
-  align-items: center;
   gap: 2rem;
-  position: relative;
-  padding: 1rem;
-  transition: opacity 0.8s ease;
   margin-top: 60px;
   flex-wrap: wrap;
 }
 
 .logo img {
-  height: 50px;
   width: 50px;
+  height: 50px;
 }
 
-/* Responsive */
-@media (max-width: 768px) {
-  .video-contenedor {
-    position: relative;   /* Ya no se pega, se queda en flujo */
-    top: 0;               /* Reinicia top */
+/* ============================================================
+             RESPONSIVE GLOBAL REAL (COMO EL OTRO)
+=============================================================== */
+
+/* Tablets grandes y pantallas medianas */
+@media (max-width: 1024px) {
+
+  .padre, .padre2 {
+    padding-top: 4rem;
+    gap: 2.5rem;
   }
 
-  .logos-contenedor {
-    gap: 1.5rem;
-    margin-top: 40px;
-  }
-
-  .logo img {
-    width: 45px;
-    height: 45px;
-  }
-}
-
-@media (max-width: 600px) {
   .sobre-mi {
+    max-width: 600px;
+  }
+
+  .video-contenedor {
+    max-width: 90%;
+  }
+}
+
+/* Tablets y móviles grandes */
+@media (max-width: 768px) {
+
+  .menu-horizontal {
+    gap: 1.5rem;
+    padding: 1rem 0.5rem;
+  }
+
+  .apartado {
+    font-size: 1.3rem;
+  }
+
+  .video-contenedor {
+    width: 100%;
+    max-width: 100%;
+    margin: 40px auto;
     padding: 1.5rem;
+  }
+
+  .video-contenedor iframe,
+  .video-contenedor video,
+  .video-contenedor img {
+    width: 100%;
+    height: auto;
+    aspect-ratio: 16/9;
+  }
+}
+
+/* Móviles estándar */
+@media (max-width: 600px) {
+
+  .padre, .padre2 {
+    padding: 4rem 1rem 1rem;
+    gap: 2rem;
+  }
+
+  .sobre-mi {
+    max-width: 100%;
+    padding: 1.3rem;
   }
 
   .sobre-mi h2 {
@@ -221,9 +252,12 @@ a:active {
 
   .video-contenedor {
     padding: 1.2rem;
+    margin-top: 25px;
   }
 
-  .video-contenedor video {
+  .video-contenedor iframe,
+  .video-contenedor video,
+  .video-contenedor img {
     border-radius: 10px;
   }
 
@@ -238,15 +272,18 @@ a:active {
   }
 }
 
-/* Animaciones */
-@keyframes caer {
-  to {
-    transform: translateY(0);
-  }
-}
+/* Móviles pequeños */
+@media (max-width: 400px) {
 
-@keyframes expandir {
-  to {
-    transform: rotate(45deg) scale(100);
+  .apartado {
+    font-size: 1.1rem;
+  }
+
+  .video-contenedor {
+    padding: 1rem;
+  }
+
+  .sobre-mi h2 {
+    font-size: 1.8rem;
   }
 }
